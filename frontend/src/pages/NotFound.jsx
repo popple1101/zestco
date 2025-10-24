@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+
 export default function NotFound() {
   return (
     <section className="section">
@@ -6,5 +7,5 @@ export default function NotFound() {
       <p>페이지를 찾을 수 없습니다.</p>
       <Link to="/about">홈으로</Link>
     </section>
-  )
+  );
 }

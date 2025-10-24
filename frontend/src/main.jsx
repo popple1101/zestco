@@ -15,12 +15,16 @@ import NotFound from "./pages/NotFound.jsx";
 
 import AdminLayout from "./admin/AdminLayout.jsx";
 import Dashboard from "./admin/Dashboard.jsx";
+import AdminPages from "./admin/AdminPages.jsx";
 import AdminProducts from "./admin/AdminProducts.jsx";
+import AdminMedia from "./admin/AdminMedia.jsx";
 import AdminNotices from "./admin/AdminNotices.jsx";
+import AdminAnalytics from "./admin/AdminAnalytics.jsx";
+import AdminSettings from "./admin/AdminSettings.jsx";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         {/* 공개 사이트 */}
         <Route element={<Layout />}>
@@ -38,8 +42,12 @@ createRoot(document.getElementById("root")).render(
         {/* 관리자 */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="pages" element={<AdminPages />} />
           <Route path="products" element={<AdminProducts />} />
+          <Route path="media" element={<AdminMedia />} />
           <Route path="notices" element={<AdminNotices />} />
+          <Route path="analytics" element={<AdminAnalytics />} />
+          <Route path="settings" element={<AdminSettings />} />
         </Route>
       </Routes>
     </BrowserRouter>

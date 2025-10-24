@@ -1,10 +1,18 @@
+import { useCMS } from "../lib/useCMS.jsx";
+
 export default function Products() {
+  const products = useCMS("cms_products", []); // [{name, price, status}]
+  const list = Array.isArray(products) ? products : [];
+
   return (
     <section className="section">
       <h1>Products</h1>
-      <div className="grid">
-        {[1, 2, 3].map((n) => (
-          <div className="card" key={n}>
+      <div className="grid mt-12">
+        {list.length === 0 && (
+          <div className="muted">등록된 제품이 없습니다.</div>
+        )}
+        {list.map((p) => (
+          <div className="card" key={p.id}>
             <div
               style={{
                 height: 140,
@@ -13,8 +21,11 @@ export default function Products() {
                 marginBottom: 12,
               }}
             />
-            <b>제품 {n}</b>
-            <p>짧은 설명 텍스트…</p>
+            <b>{p.name}</b>
+            <p className="muted">{p.status === "draft" ? "비공개" : "공개"}</p>
+            {typeof p.price === "number" && (
+              <p>{p.price.toLocaleString()} 원</p>
+            )}
           </div>
         ))}
       </div>

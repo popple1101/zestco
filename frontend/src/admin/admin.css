@@ -1,0 +1,101 @@
+/* Admin layout */
+.admin {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+.admin-aside {
+  border-right: 1px solid #eee;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.admin-logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+}
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.admin-link {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+.admin-link.active {
+  background: #111;
+  color: #fff;
+}
+.admin-aside-foot {
+  margin-top: auto;
+  font-size: 14px;
+}
+.admin-main {
+  display: flex;
+  flex-direction: column;
+}
+.admin-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+.admin-content {
+  padding: 16px;
+}
+
+/* Grids */
+.admin-grid-241fr {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+}
+.admin-grid-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Utils */
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-12 {
+  margin-top: 12px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+
+/* Media helpers */
+.img-cover-160 {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.img-hero {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Existing global classes (card/grid/table/section/muted/stat 등은 styles.css에 이미 있음) */
